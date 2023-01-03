@@ -8,8 +8,10 @@ import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Product from "./components/Product";
 import News from "./components/news/News";
-import NewsDetails from "./components/news/NewsDetails";
 import NewsPost from "./components/news/NewsPost";
+import NewsDetails1 from "./components/news/NewsDetails1";
+import News2 from "./components/news/News2";
+import News3 from "./components/news/News3";
 function App() {
   const { access_token } = useSelector((state) => state.auth);
   return (
@@ -33,7 +35,9 @@ function App() {
             />
             <Route path="/prod" element={<Product />} />
             <Route path="/news" element={<News />} />
-            <Route path="/newsdetail" element={<NewsDetails />} />
+            <Route path="/newsdetail1" element={<NewsDetails1 />} />
+            <Route path="/newsdetail2" element={<News2 />} />
+            <Route path="/newsdetail3" element={<News3 />} />
           </Routes>
         </div>
       </div>

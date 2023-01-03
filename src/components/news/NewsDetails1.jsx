@@ -1,6 +1,6 @@
 import React from "react";
 import bil from "../../asset/bil.jfif";
-const NewsDetails = () => {
+const NewsDetails1 = () => {
   return (
     <>
       <div className="bg-white flex flex-col">
@@ -37,4 +37,5 @@ const NewsDetails = () => {
   );
 };
 
-export default NewsDetails;
+export default NewsDetails1;
+  
