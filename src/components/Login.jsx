@@ -29,7 +29,7 @@ const Login = () => {
       set_Server_Error(res.error.data);
     }
     if (res.data) {
-      storeToken(res.data.token)
+      storeToken(res.data)
       let { access_token } = getToken()
       dispatch(setUserToken({ access_token: access_token }))
       navigate('/')
@@ -40,7 +40,6 @@ const Login = () => {
   useEffect(() => {
     dispatch(setUserToken({ access_token: access_token }))
   }, [access_token, dispatch])
-
   return (
     <div>
       <form onSubmit={handleSubmit}>

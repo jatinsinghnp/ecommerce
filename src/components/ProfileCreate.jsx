@@ -6,7 +6,6 @@ import { BiDotsVerticalRounded } from "react-icons/bi";
 import { AiOutlinePlus } from "react-icons/ai";
 import { FiPhone } from "react-icons/fi";
 import { HiFolder } from "react-icons/hi";
-import { getToken } from '../services/LocalStorageService'
 const ProfileCreate = () => {
   const [call, setCall] = useState(true);
   const callBtn = () => {
@@ -14,7 +13,6 @@ const ProfileCreate = () => {
     console.log("hellow");
   };
 
-  
   return (
     <>
       <div className="flex bg-[#fff] border-y-gray-200 border border-collapse">
@@ -27,9 +25,10 @@ const ProfileCreate = () => {
       </div>
       <div className="flex items-center bg-white mx-3 mt-3  ">
         <div className="flex flex-col items-center justify-center w-[300px]  p-4 relative">
-          <button className="absolute top-0 left-0  ml-2" >
-            <AiOutlinePlus  />
+          <button className="absolute top-0 left-0  ml-2">
+            <AiOutlinePlus />
           </button>
+
           <IoStorefront size={50} />
         </div>
         <div className="w-[300px]  border-r-gray-200 border pl-2 ">
@@ -39,26 +38,28 @@ const ProfileCreate = () => {
           <BiDotsVerticalRounded size={40} />
         </div>
       </div>
-      <div className="flex bg-[#fff] items-center  mx-3 mt-4 ">
-        <div className="w-[200px]  py-10 relative">
+      <div className="flex bg-[#fff] items-center  mx-3 mt-4   ">
+        <div className="w-[212px]  py-10 relative flex flex-col items-center justify-center">
           <button className="absolute top-0 left-0  ml-2">
             <AiOutlinePlus onClick={callBtn} />
           </button>
           <FiPhone size={40} />
         </div>
-        <div className="w-[200px] py-10 border-r-gray-200 border relative">
-          <button className="absolute top-0 left-0  ml-2">
+        <div className="w-[212px] py-10 border-r-gray-200 border relative flex flex-col justify-center items-center">
+          <button className="absolute top-0 left-0  ml-2 ">
             <AiOutlinePlus />
           </button>
           <span className="text-[40px]">@</span>
         </div>
-        <div className="w-[200px] border-r-gray-200 border py-11 relative">
+        <div className="w-[212px] border-r-gray-200 border py-11 relative flex flex-col justify-center items-center ">
           <button className="absolute top-0 left-0  ml-2">
             <AiOutlinePlus />
           </button>
           <AiOutlineInfoCircle size={50} />
         </div>
-        <div className="w-[100px]  py-11 relative">
+
+
+        <div className="w-[212px]  py-11 relative items-center justify-center flex flex-col">
           <button className="absolute top-0 left-0  ml-2">
             <AiOutlinePlus />
           </button>
@@ -79,7 +80,7 @@ const ProfileCreate = () => {
           <p>tab 1</p>
           <p>+</p>
         </div>
-      ) }
+      )}
 
       <div className="bg-[#fff]  bottom-0 flex mx-3 mt-[100px]">
         <div className="w-[300px] h-[20vh] border border-collapse relative">

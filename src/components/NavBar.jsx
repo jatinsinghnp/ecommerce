@@ -5,21 +5,23 @@ import { GiMoneyStack } from "react-icons/gi";
 import { AiOutlineLogin } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 
-import { getToken,removeToken } from "../services/LocalStorageService";
-
+import { getToken, removeToken } from "../services/LocalStorageService";
+import { useDispatch } from "react-redux";
+import { unSetUserToken } from "../features/authSlice";
 
 const NavBar = () => {
-const handlelogout=()=>{
+  const dispatch = useDispatch();
+  const handlelogout = () => {
+    dispatch(unSetUserToken({ access_token: null }));
+    removeToken();
+    navigate("/login");
+  };
 
-removeToken()
-
-}
-
-  const { access_token } = getToken();
   const navigate = useNavigate();
+  const { access_token } = getToken();
   return (
     <>
-      <ul className="flex space-x-24 bg-[#F2F2F2] p-4">
+      <ul className="flex space-x-24 justify-between item-center bg-[#F2F2F2] p-4">
         <li>
           <button onClick={() => navigate(-1)}>
             <AiFillCaretLeft size={30} />
@@ -29,13 +31,15 @@ removeToken()
           <AiFillCalendar size={30} />
         </li>
         <li>
-          <BsCartFill size={30} />{" "}
+          <BsCartFill size={30} />
         </li>
         <li>
-          <GiMoneyStack size={30} />{" "}
+          <GiMoneyStack size={30} />
         </li>
 
-        <li>{ access_token ? <button onClick={handlelogout}><AiOutlineLogin size={40} /></button> : ""}</li>
+        <li>
+          {access_token ? <button onClick={handlelogout}>Logout</button> : ""}
+        </li>
       </ul>
     </>
   );
